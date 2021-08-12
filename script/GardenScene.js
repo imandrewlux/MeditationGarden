@@ -104,7 +104,6 @@ function addWater(){
   mainOcean.setAttribute('position' , "0 4 0");
   mainOcean.setAttribute('width' , "70.5");
   mainOcean.setAttribute('depth' , "70.5");
-  mainOcean.setAttribute('density' , "45");
   mainOcean.setAttribute('rotation' , "-90 45 0");
 
   waterCon.setAttribute('rotation', '0 45 0');
