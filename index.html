@@ -124,12 +124,22 @@
     <script type="text/javascript" src="script/loadingScript.js"></script>
     <script>
       window.onload = (event) => {
-        console.log('page is fully loaded');
         var loadingScreen = document.querySelector(".a-loader-title");
         loadingScreen.classList.add('hide-foo');
         document.title = "Garden";
-        var musicDiv = document.getElementById("music");
-         musicDiv.play();
+
+
+          var musicDiv = document.getElementById("music").play();
+
+          if (musicDiv !== undefined) {
+          musicDiv.then(function() {
+          }).catch(function(error) {
+              console.log(error);
+          });
+          }
+          alert("k");
+            
+
       };
 
     </script>
