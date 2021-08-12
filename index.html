@@ -1,0 +1,138 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+  <script type="text/javascript" src="script/core/aframeinit.js"></script>
+  <title> Garden </title>
+  </head>
+  <body>
+  <script>
+    document.title = "Garden - Now Loading";
+
+  </script>
+
+  <audio id="music" controls style="width: 1px;height: 1px;position: absolute;z-index: 99999;">
+    <source src="music/Michael_Louis-Slept_On-01_Side_A.mp3" type="audio/mpeg">
+</audio>
+
+<a-scene loading-screen="dotsColor: red; backgroundColor: black"  >
+  
+  <a-assets id="assets">
+  </a-assets>
+
+
+  <!-- light objects -->
+  <a-entity light="type: ambient; intensity: 0.1;" ></a-entity>
+
+
+
+  <a-entity class="container" animation="property: rotation; to: 0 360 0; from: 0 0 0;loop: true; dur: 100000; easing:linear;" position="0 -20 -90">
+    <!-- skybox -->
+    <a-sky radius="10000" rotation="45 0 0" material="src:texture/equirectangular-sky/starmap_g4k.jpeg"></a-sky>
+    <a-sphere radius="500" rotation="0 0 0" material="src:texture/equirectangular-sky/template.png; side:back" transparent="true;"></a-sphere>
+
+    <!-- floor -->
+    <a-entity class="floor">
+       <a-cylinder material="src: texture/grassfloor/Grass_003_COLOR.jpg; normalMap: texture/grassfloor/Grass_003_NRM.jpg; ambientOcclusionMap: texture/grassfloor/Grass_004_OCC.jpg; displacementMap: texture/grassfloor/Grass_003_DISP.png; roughness:0.9; repeat: 25 25; ambientOcclusionTextureRepeat: 25 25; normalTextureRepeat: 25 25; displacementTextureRepeat: 25 25;" position="0 0 0" radius="500" height="1" shadow="receive: true"></a-cylinder>
+    </a-entity>
+
+    <!-- fountain -->
+    <a-entity class="fountain">
+
+      <!-- floating shit -->
+  
+      <a-entity class="pyramidz" position="0 35 0" >
+
+        <a-sphere color="red" radius="0.5" position="0 0 0" light="type:point; color: #5788fa; intensity: 0.4; castShadow: true; distance: 300;"></a-sphere>
+
+        <a-entity class="diamond-one" animation="property: rotation; to: 960 0 780; dur: 20000; dir:alternate; loop:true; easing: linear; delay: 2000" animation__scale="property: scale; to: 2.8 2.8 2.8; from: 0.5 0.5 0.5; dur: 20000; dir:alternate; loop:true; easing: linear;delay: 2500">
+        
+          <a-triangle material="side:front; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 4 0" vertex-b="0 1 3" vertex-c=" 3 1 0" shadow="cast:true; receive: false;" color="#fff" ></a-triangle>
+          <a-triangle material="side:back; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 4 0" vertex-b="0 1 -3" vertex-c="3 1 0" shadow="cast:true; receive: false;" color="#fff" ></a-triangle>
+          <a-triangle material="side:back; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 4 0" vertex-b="0 1 3" vertex-c="-3 1 0" shadow="cast:true; receive: false;" color="#fff" ></a-triangle>
+          <a-triangle material="side:front; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 4 0" vertex-b="0 1 -3" vertex-c="-3 1 0" shadow="cast:true; receive: false;" color="#fff"></a-triangle>
+          <a-box material="side:front; metalness:0.5; roughness:0;" color="#5788fa" position="0 1 0" width="4.1" depth="4.1" height="0.1" rotation="0 45 0" shadow="cast:true; receive: false;" ></a-box>
+
+          <a-triangle material="side:back; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 -4 0" vertex-b="0 -1 3" vertex-c=" 3 -1 0" shadow="cast:true; receive: false;" color="#fff"></a-triangle>
+          <a-triangle material="side:front; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 -4 0" vertex-b="0 -1 -3" vertex-c="3 -1 0" shadow="cast:true; receive: false;" color="#fff"></a-triangle>
+          <a-triangle material="side:front; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 -4 0" vertex-b="0 -1 3" vertex-c="-3 -1 0" shadow="cast:true; receive: false;" color="#fff"></a-triangle>
+          <a-triangle material="side:back; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 -4 0" vertex-b="0 -1 -3" vertex-c="-3 -1 0" shadow="cast:true; receive: false;" color="#fff"></a-triangle>
+          <a-box material="side:front; metalness:0.5; roughness:0;" color="#5788fa" position="0 -1 0" width="4.1" depth="4.1" height="0.1" rotation="0 45 0" shadow="cast:true; receive: false;" ></a-box>
+
+        </a-entity>
+
+        <a-entity class="diamond-two" animation="property: rotation; to: 180 0 754; dur: 20000; dir:alternate; loop:true; easing: linear; delay:5000"
+        animation__scale="property: scale; to: 1.8 1.8 1.8; from: 1 1 1; dur: 15000; dir:alternate; loop:true; easing: linear;delay:1300">
+           <a-triangle material="side:front; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 4 0" vertex-b="0 1 3" vertex-c=" 3 1 0" shadow="cast:true; receive: false;" color="#fff" ></a-triangle>
+          <a-triangle material="side:back; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 4 0" vertex-b="0 1 -3" vertex-c="3 1 0" shadow="cast:true; receive: false;" color="#fff" ></a-triangle>
+          <a-triangle material="side:back; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 4 0" vertex-b="0 1 3" vertex-c="-3 1 0" shadow="cast:true; receive: false;" color="#fff" ></a-triangle>
+          <a-triangle material="side:front; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 4 0" vertex-b="0 1 -3" vertex-c="-3 1 0" shadow="cast:true; receive: false;" color="#fff"></a-triangle>
+          <a-box material="side:front; metalness:0.5; roughness:0;" color="#5788fa" position="0 1 0" width="4.1" depth="4.1" height="0.1" rotation="0 45 0" shadow="cast:true; receive: false;" ></a-box>
+
+          <a-triangle material="side:back; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 -4 0" vertex-b="0 -1 3" vertex-c=" 3 -1 0" shadow="cast:true; receive: false;" color="#fff"></a-triangle>
+          <a-triangle material="side:front; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 -4 0" vertex-b="0 -1 -3" vertex-c="3 -1 0" shadow="cast:true; receive: false;" color="#fff"></a-triangle>
+          <a-triangle material="side:front; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 -4 0" vertex-b="0 -1 3" vertex-c="-3 -1 0" shadow="cast:true; receive: false;" color="#fff"></a-triangle>
+          <a-triangle material="side:back; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 -4 0" vertex-b="0 -1 -3" vertex-c="-3 -1 0" shadow="cast:true; receive: false;" color="#fff"></a-triangle>
+          <a-box material="side:front; metalness:0.5; roughness:0;" color="#5788fa" position="0 -1 0" width="4.1" depth="4.1" height="0.1" rotation="0 45 0" shadow="cast:true; receive: false;" ></a-box>
+        </a-entity>
+
+        <a-entity class="diamond-three" animation="property: rotation; to: 1980 0 3000; dur: 20000; dir:alternate; loop:true;easing: linear;delay:900;"
+        animation__scale="property: scale; to: 2.7 2.7 2.7; from: 1 1 1; dur: 18000; dir:alternate; loop:true; easing: linear;delay:16000">
+           <a-triangle material="side:front; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 4 0" vertex-b="0 1 3" vertex-c=" 3 1 0" shadow="cast:true; receive: false;" color="#fff" ></a-triangle>
+          <a-triangle material="side:back; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 4 0" vertex-b="0 1 -3" vertex-c="3 1 0" shadow="cast:true; receive: false;" color="#fff" ></a-triangle>
+          <a-triangle material="side:back; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 4 0" vertex-b="0 1 3" vertex-c="-3 1 0" shadow="cast:true; receive: false;" color="#fff" ></a-triangle>
+          <a-triangle material="side:front; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 4 0" vertex-b="0 1 -3" vertex-c="-3 1 0" shadow="cast:true; receive: false;" color="#fff"></a-triangle>
+          <a-box material="side:front; metalness:0.5; roughness:0;" color="#5788fa" position="0 1 0" width="4.1" depth="4.1" height="0.1" rotation="0 45 0" shadow="cast:true; receive: false;" ></a-box>
+
+          <a-triangle material="side:back; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 -4 0" vertex-b="0 -1 3" vertex-c=" 3 -1 0" shadow="cast:true; receive: false;" color="#fff"></a-triangle>
+          <a-triangle material="side:front; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 -4 0" vertex-b="0 -1 -3" vertex-c="3 -1 0" shadow="cast:true; receive: false;" color="#fff"></a-triangle>
+          <a-triangle material="side:front; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 -4 0" vertex-b="0 -1 3" vertex-c="-3 -1 0" shadow="cast:true; receive: false;" color="#fff"></a-triangle>
+          <a-triangle material="side:back; metalness:0.5; roughness:0;" color="#5788fa" vertex-a="0 -4 0" vertex-b="0 -1 -3" vertex-c="-3 -1 0" shadow="cast:true; receive: false;" color="#fff"></a-triangle>
+          <a-box material="side:front; metalness:0.5; roughness:0;" color="#5788fa" position="0 -1 0" width="4.1" depth="4.1" height="0.1" rotation="0 45 0" shadow="cast:true; receive: false;" ></a-box>
+        </a-entity>
+
+      </a-entity>
+      
+      
+
+      <!-- water -->
+      <a-entity class="water">
+
+      </a-entity>
+      
+    </a-entity>
+    
+    <!-- Trees -->
+    <a-entity id="treez" class="tree-area">
+    </a-entity>
+
+  </a-entity>
+
+  <!-- camera -->
+  
+
+  <a-entity camera="active: true" wasd-controls="acceleration:1000" look-controls></a-entity>
+
+
+</a-scene>
+
+
+    <script type="text/javascript" src="script/GardenScene.js"></script>
+    <script type="text/javascript" src="script/loadingScript.js"></script>
+    <script>
+      window.onload = (event) => {
+        console.log('page is fully loaded');
+        var loadingScreen = document.querySelector(".a-loader-title");
+        loadingScreen.classList.add('hide-foo');
+        document.title = "Garden";
+        var musicDiv = document.getElementById("music");
+         musicDiv.play();
+      };
+
+    </script>
+
+  </body>
+</html>
