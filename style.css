@@ -19,6 +19,7 @@ h1{
 
 .a-loader-title {
   display: flex !important;
+  flex-wrap: wrap;
   height: 100vh;
   background-color: black;
   justify-content: center;
@@ -41,6 +42,19 @@ h1{
   left: 0;
   top: 0;
   mix-blend-mode: darken;
+  pointer-events: none;
+}
+.clicktostart{
+  display: none;
+}
+.clicktostart.show-foo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clicktostart button{
+  font-size: 30px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 800px){

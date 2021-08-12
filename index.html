@@ -17,7 +17,7 @@
   <audio id="music" controls style="width: 1px;height: 1px;position: absolute;z-index: 99999;">
     <source src="music/Michael_Louis-Slept_On-01_Side_A.mp3" type="audio/mpeg">
 </audio>
-
+<div class="clicktostart"><button onclick="musicStart()">Start</button></div>
 <a-scene id="scene" loading-screen="dotsColor: red; backgroundColor: black"  >
   
   <a-assets id="assets">
@@ -127,17 +127,21 @@
     <script type="text/javascript" src="script/GardenScene.js"></script>
     <script type="text/javascript" src="script/loadingScript.js"></script>
     <script>
+      var musicDiv = document.getElementById("music");
+      var loadingScreen = document.querySelector(".a-loader-title");
+      var startdiv = document.querySelector('.clicktostart');
+      loadingScreen.appendChild(startdiv);
       window.onload = (event) => {
-        var loadingScreen = document.querySelector(".a-loader-title");
-        loadingScreen.classList.add('hide-foo');
         document.title = "Garden";
-        var musicDiv = document.getElementById("music");
-        musicDiv.play();
-      };
-
-
+        startdiv.classList.add('show-foo');
         
-
+      };
+      function musicStart(){
+        console.log("shitbutt");
+        loadingScreen.classList.add('hide-foo');
+        musicDiv.play();
+        startdiv.classList.remove('show-foo');
+      }
     </script>
 
   </body>
