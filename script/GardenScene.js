@@ -97,6 +97,7 @@ function addFairyLights(randX, randZ, fairyNum, randDelay, rayDel1, rayDel2, ray
 function addWater(){
 
   let waterCon = document.querySelector('.water');
+  let fountainCon = document.querySelector('.fountain');
   let mainOcean = document.createElement('a-ocean');
   mainOcean.setAttribute('color' , "#92E2E2");
   mainOcean.setAttribute('opacity' , "0.6");
@@ -109,7 +110,7 @@ function addWater(){
   waterCon.setAttribute('rotation', '0 45 0');
   waterCon.innerHTML = '<a-ocean color="#92E2E2" opacity="0.6" position="0 3.5 40" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="10 3.5 40" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="18 3.5 38" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="25 3.5 35" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="40 3.5 0" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="40 3.5 10" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="38 3.5 18" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="35 3.5 25" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="-10 3.5 40" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="-18 3.5 38" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="-25 3.5 35" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="-40 3.5 0" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="-40 3.5 10" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="-38 3.5 18" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="-35 3.5 25" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="0 3.5 -40" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="10 3.5 -40" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="18 3.5 -38" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="25 3.5 -35" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="40 3.5 -10" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="38 3.5 -18" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="35 3.5 -25" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="-10 3.5 -40" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="-18 3.5 -38" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="-25 3.5 -35" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="-40 3.5 -10" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="-38 3.5 -18" width="10" depth="10" ></a-ocean><a-ocean color="#92E2E2" opacity="0.6" position="-35 3.5 -25" width="10" depth="10" ></a-ocean>'
 
-  scene.appendChild(mainOcean);
+  fountainCon.appendChild(mainOcean);
 }
 
 function fountain(){
