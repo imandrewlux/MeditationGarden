@@ -6,11 +6,11 @@
   <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
   <script type="text/javascript" src="script/core/aframeinit.js"></script>
-  <title> Garden </title>
+  <title> Meditation Garden </title>
   </head>
   <body>
   <script>
-    document.title = "Garden - Now Loading";
+    document.title = "Meditation Garden - Loading";
 
   </script>
 
@@ -129,10 +129,12 @@
     <script>
       var musicDiv = document.getElementById("music");
       var loadingScreen = document.querySelector(".a-loader-title");
+      var textchange = loadingScreen.childNodes[0];
       var startdiv = document.querySelector('.clicktostart');
       loadingScreen.appendChild(startdiv);
       window.onload = (event) => {
-        document.title = "Garden";
+        document.title = "Meditation Garden";
+        textchange.nodeValue = "Meditation Garden";
         startdiv.classList.add('show-foo');
         
       };

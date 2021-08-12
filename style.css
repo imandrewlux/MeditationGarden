@@ -48,13 +48,21 @@ h1{
   display: none;
 }
 .clicktostart.show-foo{
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
+  position: absolute;
+    z-index: 4;
+    bottom: 0;
+    margin-bottom: 130px;
 }
 .clicktostart button{
-  font-size: 30px;
+  font-size: 90px;
   cursor: pointer;
+  font-family: 'Tangerine', cursive;
+  background:  url('gifs/loadingbg1.gif');
+  border-radius: 10px;
+  padding: 5px 30px 0 20px;
 }
 
 @media screen and (max-width: 800px){
