@@ -18,7 +18,7 @@
     <source src="music/Michael_Louis-Slept_On-01_Side_A.mp3" type="audio/mpeg">
 </audio>
 
-<a-scene loading-screen="dotsColor: red; backgroundColor: black"  >
+<a-scene id="scene" loading-screen="dotsColor: red; backgroundColor: black"  >
   
   <a-assets id="assets">
   </a-assets>
@@ -114,7 +114,11 @@
   <!-- camera -->
   
 
-  <a-entity camera="active: true" wasd-controls="acceleration:1000" look-controls></a-entity>
+  <a-entity id="raycaster" camera="active: true" pointerLockEnabled wasd-controls="acceleration:1000" look-controls>
+    <a-entity id="raycaster" raycaster="objects: #scene"
+            cursor="fuse: true; fuseTimeout: 1;"
+            position="0 0 -1"></a-entity>
+  </a-entity>
 
 
 </a-scene>
@@ -127,19 +131,15 @@
         var loadingScreen = document.querySelector(".a-loader-title");
         loadingScreen.classList.add('hide-foo');
         document.title = "Garden";
-
-
-          var musicDiv = document.getElementById("music").play();
-
-          if (musicDiv !== undefined) {
-          musicDiv.then(function() {
-          }).catch(function(error) {
-              console.log(error);
-          });
-          }
-            
-
       };
+        var meanscene = document.getElementById("scene");
+        var musicDiv = document.getElementById("music");
+        var rayy = document.getElementById("raycaster");
+        meanscene.addEventListener('click', function (evt) {
+         musicDiv.play();
+         console.log("click");
+         rayy.innerHtml = "";
+       });
 
     </script>
 
