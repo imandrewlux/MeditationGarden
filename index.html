@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+  <script src="https://unpkg.com/aframe-geometry-merger-component/dist/aframe-geometry-merger-component.min.js"></script>
   <script type="text/javascript" src="script/core/aframeinit.js"></script>
   <title> Meditation Garden </title>
   </head>
@@ -18,7 +19,7 @@
     <source src="music/Michael_Louis-Slept_On-01_Side_A.mp3" type="audio/mpeg">
 </audio>
 <div class="clicktostart"><button onclick="musicStart()">Start</button></div>
-<a-scene id="scene" loading-screen="dotsColor: red; backgroundColor: black"  >
+<a-scene stats id="scene" loading-screen="dotsColor: red; backgroundColor: black"  >
   
   <a-assets id="assets">
   </a-assets>
@@ -29,7 +30,7 @@
 
 
 
-  <a-entity class="container" animation="property: rotation; to: 0 360 0; from: 0 0 0;loop: true; dur: 100000; easing:linear;" position="0 -20 -90">
+  <a-entity  class="container" animation="property: rotation; to: 0 360 0; from: 0 0 0;loop: true; dur: 100000; easing:linear;" position="0 -20 -90" geometry-merger="preserveOriginal: false" >
     <!-- skybox -->
     <a-sky radius="10000" rotation="45 0 0" material="src:texture/equirectangular-sky/starmap_g4k.jpeg"></a-sky>
     <a-sphere radius="500" rotation="0 0 0" material="src:texture/equirectangular-sky/template.png; side:back" transparent="true;"></a-sphere>

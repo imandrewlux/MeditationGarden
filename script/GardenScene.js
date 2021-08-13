@@ -4,16 +4,12 @@ function loader(){
   //grass assetts
   let grassObj = document.createElement('a-asset-item');
   grassObj.setAttribute('id', 'grassObj');
-  grassObj.setAttribute('src', 'models/grass_low_poly.obj');
+  grassObj.setAttribute('src', 'models/grass/grass_low_poly.obj');
   asssettts.appendChild(grassObj);
   let grassColor = document.createElement('a-asset-item');
-  grassColor.setAttribute('id', 'grassColor');
-  grassColor.setAttribute('src', 'texture/grass/grass-low-poly.png');
+  grassColor.setAttribute('id', 'grassMtl');
+  grassColor.setAttribute('src', 'models/grass/grass_low_poly.mtl');
   asssettts.appendChild(grassColor);
-  let grassNormal = document.createElement('a-asset-item');
-  grassNormal.setAttribute('id' , 'grassNormal');
-  grassNormal.setAttribute('src' , 'texture/grass/low_poly_grass_normal.png');
-  asssettts.appendChild(grassNormal);
  
 
   //Marble
@@ -29,17 +25,17 @@ function loader(){
   //multicolumn
   let columnObj = document.createElement('a-asset-item');
   columnObj.setAttribute('id', 'columnObj');
-  columnObj.setAttribute('src' , 'models/pillar-set.obj');
+  columnObj.setAttribute('src' , 'models/pillar-set-LR.obj');
   asssettts.appendChild(columnObj);
 
   //small guy
   let smallGuyObj = document.createElement('a-asset-item');
   smallGuyObj.setAttribute('id' , 'smallGuyObj');
-  smallGuyObj.setAttribute('src' , 'models/small/Plantain.obj');
+  smallGuyObj.setAttribute('src' , 'models/small/small-LR.obj');
   asssettts.appendChild(smallGuyObj);
   let smallGuyMtl = document.createElement('a-asset-item');
   smallGuyMtl.setAttribute('id', 'smallGuyMtl');
-  smallGuyMtl.setAttribute('src' , 'models/small/Plantain.mtl');
+  smallGuyMtl.setAttribute('src' , 'models/small/small-LR.mtl');
   asssettts.appendChild(smallGuyMtl);
 }
 loader();
@@ -53,8 +49,8 @@ let scene = document.querySelector( '.tree-area' );
 // create grass clumps
 function addGrass(randX, randZ) {
   let grass = document.createElement( 'a-entity');
-  grass.setAttribute( 'obj-model', 'obj: #grassObj');
-  grass.setAttribute( 'material', 'src: #grassColor; normalMap: #grassNormal; opacity: 0.98; side: double;');
+  grass.setAttribute( 'obj-model', 'obj: #grassObj; mtl: #grassMtl');
+  grass.setAttribute( 'material', ' side: double;');
   grass.setAttribute( 'position' , `${randX} -3 ${randZ}` );
   grass.setAttribute( 'shadow' , 'cast: false; receive: true;' );
   
@@ -67,7 +63,7 @@ function addSmallGuys(randX, randZ) {
   smll.setAttribute( 'obj-model', 'obj: #smallGuyObj; mtl: #smallGuyMtl');
   smll.setAttribute( 'position' , `${randX} 2 ${randZ}` );
   smll.setAttribute( 'shadow' , 'cast: true; receive: true;' );
-  smll.setAttribute('scale', '.06 .06 .06');
+  //smll.setAttribute('scale', '.06 .06 .06');
   
   scene.appendChild( smll );
 }
@@ -189,7 +185,7 @@ function fountain(){
     let columns = document.createElement('a-entity');
     columns.setAttribute('obj-model' , "obj: #columnObj");
     columns.setAttribute('material' , "src: #marbleColor; normalMap: #marbleNormal; roughness: 0;");
-    columns.setAttribute('scale' , ".2 .2 .2");
+    columns.setAttribute('scale' , "1 1 1");
     columns.setAttribute('shadow' , "cast: true; receive: true;");
     columns.setAttribute('position' , `${ Math.round( 50 * Math.sin( deginit *(Math.PI / 180) ) ) } 0 ${ Math.round( 50 * Math.cos( deginit *(Math.PI / 180) ) ) }`);
     
