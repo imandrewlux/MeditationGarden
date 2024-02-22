@@ -1,13 +1,16 @@
 <!DOCTYPE html> 
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe@1.5.0/dist/aframe-master.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
-  <script src="https://unpkg.com/aframe-geometry-merger-component/dist/aframe-geometry-merger-component.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-gif-shader@0.9.1/dist/aframe-gif-shader.min.jss"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
+  <script src="
+https://cdn.jsdelivr.net/npm/aframe-watcher@1.4.0/index.min.js
+"></script>
   <script type="text/javascript" src="script/core/aframeinit.js"></script>
   <title> Meditation Garden </title>
+   <link rel="icon" type="image/x-icon" href="favicon.png">
   </head>
   <body>
   <script>
@@ -128,22 +131,10 @@
     <script type="text/javascript" src="script/GardenScene.js"></script>
     <script type="text/javascript" src="script/loadingScript.js"></script>
     <script>
-      var musicDiv = document.getElementById("music");
-      var loadingScreen = document.querySelector(".a-loader-title");
-      var textchange = loadingScreen.childNodes[0];
-      var startdiv = document.querySelector('.clicktostart');
-      loadingScreen.appendChild(startdiv);
-      window.onload = (event) => {
-        document.title = "Meditation Garden";
-        textchange.nodeValue = "Meditation Garden";
-        startdiv.classList.add('show-foo');
-        
-      };
       function musicStart(){
-        console.log("shitbutt");
-        loadingScreen.classList.add('hide-foo');
-        musicDiv.play();
-        startdiv.classList.remove('show-foo');
+        document.querySelector(".a-loader-title").classList.add('hide-foo');
+        document.getElementById("music").play();
+        document.querySelector('.clicktostart').classList.remove('show-foo');
       }
     </script>
 

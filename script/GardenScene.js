@@ -16,10 +16,12 @@ function loader(){
   let marbleColor = document.createElement('a-asset-item');
   marbleColor.setAttribute('id', 'marbleColor');
   marbleColor.setAttribute('src' , 'texture/marble/White_Marble_001_COLOR_COLOR.jpg');
+  marbleColor.setAttribute('crossorigin',  'anonymous');
   asssettts.appendChild(marbleColor);
   let marbleNormal = document.createElement('a-asset-item');
   marbleNormal.setAttribute('id', 'marbleNormal');
   marbleNormal.setAttribute('src' , 'texture/marble/White_Marble_001_COLOR_NRM.jpg');
+  marbleColor.setAttribute('crossorigin',  'anonymous');
   asssettts.appendChild(marbleNormal);
 
   //multicolumn
@@ -118,7 +120,7 @@ function fountain(){
   outershell.setAttribute('radius' , "50");
   outershell.setAttribute('segments-radial' , "20");
   outershell.setAttribute('shadow' , "cast: false; receive: true;");
-  outershell.setAttribute('material' , "src: #marbleColor; normalMap: #marbleNormal; repeat: 3 1; offset: 0 .5; roughness: 0; ");
+  outershell.setAttribute('material' , "src: ./texture/marble/White_Marble_001_COLOR_COLOR.jpg; normalMap: ./texture/marble/White_Marble_001_COLOR_NRM.jpg; repeat: 3 1; offset: 0 .5; roughness: 0; ");
 
   let innershell = document.createElement('a-cylinder');  
   innershell.setAttribute('open-ended' , "true");
@@ -126,7 +128,7 @@ function fountain(){
   innershell.setAttribute('radius' , "45");
   innershell.setAttribute('segments-radial' , "20");
   innershell.setAttribute('shadow' , "cast: false; receive: true;");
-  innershell.setAttribute('material' , "src: #marbleColor; normalMap: #marbleNormal; repeat: 3 1; offset: 0 .5; side: back; roughness: 0; ");
+  innershell.setAttribute('material' , "src: ./texture/marble/White_Marble_001_COLOR_COLOR.jpg; normalMap: ./texture/marble/White_Marble_001_COLOR_NRM.jpg; repeat: 3 1; offset: 0 .5; side: back; roughness: 0; ");
 
   let topBit = document.createElement('a-ring');  
   topBit.setAttribute('radius-outer' , "50");
@@ -135,7 +137,7 @@ function fountain(){
   topBit.setAttribute('rotation' , "-90 0 0");
   topBit.setAttribute('segments-theta' , "20");
   topBit.setAttribute('shadow' , "cast: false; receive: true;");
-  topBit.setAttribute('material' , "src: #marbleColor; normalMap: #marbleNormal; roughness: 0; ");
+  topBit.setAttribute('material' , "src: ./texture/marble/White_Marble_001_COLOR_COLOR.jpg; normalMap: ./texture/marble/White_Marble_001_COLOR_NRM.jpg; roughness: 0; ");
 
   let bottomBit = document.createElement('a-circle');  
   bottomBit.setAttribute('radius' , "50");
@@ -143,7 +145,7 @@ function fountain(){
   bottomBit.setAttribute('rotation' , "-90 0 0");
   bottomBit.setAttribute('segments' , "20");
   bottomBit.setAttribute('shadow' , "cast: false; receive: true;");
-  bottomBit.setAttribute('material' , "src: #marbleColor; normalMap: #marbleNormal; roughness: 1; ");
+  bottomBit.setAttribute('material' , "src: ./texture/marble/White_Marble_001_COLOR_COLOR.jpg; normalMap: ./texture/marble/White_Marble_001_COLOR_NRM.jpg; roughness: 1; ");
 
   let celeing = document.createElement('a-ring');  
   celeing.setAttribute('radius-outer' , "57");
@@ -152,13 +154,13 @@ function fountain(){
   celeing.setAttribute('rotation' , "-90 0 0");
   celeing.setAttribute('segments-theta' , "20");
   celeing.setAttribute('shadow' , "cast: false; receive: true;");
-  celeing.setAttribute('material' , "src: #marbleColor; normalMap: #marbleNormal; side: back; roughness: 0; ");
+  celeing.setAttribute('material' , "src: ./texture/marble/White_Marble_001_COLOR_COLOR.jpg; normalMap: ./texture/marble/White_Marble_001_COLOR_NRM.jpg; side: back; roughness: 0; ");
 
   let centerColumn = document.createElement('a-entity');  
   centerColumn.setAttribute('obj-model' , "obj: models/Column_LP.obj");
   centerColumn.setAttribute('scale' , "20 20 20");
   centerColumn.setAttribute('shadow' , "cast: false; receive: true;");
-  centerColumn.setAttribute('material' , "src: #marbleColor; normalMap: #marbleNormal; roughness: 0; ");
+  centerColumn.setAttribute('material' , "src: ./texture/marble/White_Marble_001_COLOR_COLOR.jpg; normalMap: ./texture/marble/White_Marble_001_COLOR_NRM.jpg; roughness: 0; ");
 
   let outershelltop = document.createElement('a-cylinder');
   outershelltop.setAttribute('open-ended' , "true");
@@ -167,7 +169,7 @@ function fountain(){
   outershelltop.setAttribute('position' , "0 70 0");
   outershelltop.setAttribute('segments-radial' , "20");
   outershelltop.setAttribute('shadow' , "cast: false; receive: true;");
-  outershelltop.setAttribute('material' , "src: #marbleColor; normalMap: #marbleNormal; repeat: 3 1; offset: 0 .9; roughness: 0; ");
+  outershelltop.setAttribute('material' , "src: ./texture/marble/White_Marble_001_COLOR_COLOR.jpg; normalMap: ./texture/marble/White_Marble_001_COLOR_NRM.jpg; repeat: 3 1; offset: 0 .9; roughness: 0; ");
 
   let innsershelltop = document.createElement('a-cylinder');
   innsershelltop.setAttribute('open-ended' , "true");
@@ -176,7 +178,7 @@ function fountain(){
   innsershelltop.setAttribute('position' , "0 70 0");
   innsershelltop.setAttribute('segments-radial' , "20");
   innsershelltop.setAttribute('shadow' , "cast: false; receive: true;");
-  innsershelltop.setAttribute('material' , "src: #marbleColor; normalMap: #marbleNormal; repeat: 3 1; offset: 0 .9; side:back; roughness: 0; ");
+  innsershelltop.setAttribute('material' , "src: ./texture/marble/White_Marble_001_COLOR_COLOR.jpg; normalMap: ./texture/marble/White_Marble_001_COLOR_NRM.jpg; repeat: 3 1; offset: 0 .9; side:back; roughness: 0; ");
 
 
   let deginit = 72;
@@ -184,7 +186,7 @@ function fountain(){
     
     let columns = document.createElement('a-entity');
     columns.setAttribute('obj-model' , "obj: #columnObj");
-    columns.setAttribute('material' , "src: #marbleColor; normalMap: #marbleNormal; roughness: 0;");
+    columns.setAttribute('material' , "src: ./texture/marble/White_Marble_001_COLOR_COLOR.jpg; normalMap: ./texture/marble/White_Marble_001_COLOR_NRM.jpg; roughness: 0;");
     columns.setAttribute('scale' , "1 1 1");
     columns.setAttribute('shadow' , "cast: true; receive: true;");
     columns.setAttribute('position' , `${ Math.round( 50 * Math.sin( deginit *(Math.PI / 180) ) ) } 0 ${ Math.round( 50 * Math.cos( deginit *(Math.PI / 180) ) ) }`);
